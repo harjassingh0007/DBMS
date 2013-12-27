@@ -1,0 +1,98 @@
+String Functions-----
+
+
+concat function-
+	if any string will be NULL then output will be NULL
+
+	select concat('a','b','c');
+	output--- abc
+
+	select concat('a','b',NULL);
+	output--- NULL
+
+	select concat('a','b',ifNULL(value,''));
+	if value will be null then empty string will be concat with a and b else value;
+
+	select concat('a','b',1)
+	output-- ab1
+	1 will automatically converted into string and concat with ab.
+
+concat with separator-
+	SYNTAX --- select concat_ws(separator,str1,str2,...,str(n));
+	In this NULL will be excluded, it will be ignored
+
+	select concat_ws(',','a','b');
+	OUTPUT-- a,b
+
+	select concat_ws(',','a','b',NULL);
+	OUTPUT-- a,b
+
+ASCII function-
+	SYNTAX--- select ASCII(char);
+
+	select ASCII('a');
+	output -- 97;
+
+	select ASCII('abc');
+	output -- 97           // only a will be converted into ascii code
+
+	select ASCII(NULL);
+	output -- NULL
+
+	select ASCII('');
+	output -- 0
+
+CHAR function-
+	SYNTAX --- select char(number)
+
+	select char(97);
+	output -- 'a'
+
+	select char(NULL);
+	output -- '';
+
+	select char(0);
+	output -- ''
+
+	select char(97,98,99);
+	output -- abc;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

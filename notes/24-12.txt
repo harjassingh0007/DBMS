@@ -1,0 +1,62 @@
+select * from student
+
+select if(subject_1>subject_2,subject_1,subject_2) as "greater" from student;
+
+
+SIMPLE CASE------
+select RollNo,case Subject_1
+when 50 then 'fifty'
+when 60 then 'sixty'
+when 70 then 'seventy'
+else 'Not Found'
+end 
+from student;
+
+CONDITIONAL CASE------
+select Name,case
+when (subject_1>=90) then 'A'
+when (subject_1>=70) then 'B'
+when (subject_1>=50) then 'C'
+else 'FAIL'
+end 
+from student;
+
+
+select ifNULL(expr1,expr2);
+if expr1 is null then expr2 else expr1
+
+select NULLIF(expr1,expr2);
+if expr1 = expr2 then NULL else expr1
+
+select ceil(0);
+
+select floor(5.232);
+select floor(NULL);
+
+
+
+select round(1.236);
+select round(1.236,2);
+select round(13455,2);
+
+
+select floor(5.232);
+select floor(NULL);
+
+select round(1.236);
+select round(1.236,2);
+select round(13455,2);
+
+select truncate(1.3,3);
+
+select greatest(NULL,23,45);
+
+select greatest(IFNULL(NULL,12),23,45);
+
+select least(12,15,23);
+
+select sign(2);
+
+select mod(x,y);
+select  x mod y;
+select  x % y;

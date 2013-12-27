@@ -1,0 +1,49 @@
+create table Employee(
+EmpNo int,
+Employee varchar(30),
+Salary int,
+DeptNo int);
+
+select * from employee
+
+delete from Employee
+where EmpNo = 4; 
+
+insert into Employee values(8, 'H', NULL,NULL);
+
+update employee
+set salary = 0 where Employee = 'H'
+
+select DeptNo, sum(salary)
+from Employee
+group by DeptNo  
+
+select DeptNo, sum(salary), AVG(salary)
+from Employee
+group by DeptNo  
+
+select DeptNo,  max(salary)
+from Employee
+group by DeptNo, EmpNo  
+
+*******Non Aggregation column should be part of group by*****
+
+select DeptNo, max(salary)
+from employee
+where DeptNo is not NULL
+group by DeptNo
+
+select DeptNo, max(salary)
+from employee
+where DeptNo is not NULL
+group by DeptNo
+having max(salary) >= 5000
+
+having count(*) >= 3;
+
+order by DeptNo
+
+
+select employee, salary + 5000 as New_Salary
+from Employee
+where New_Salary >= 5000
